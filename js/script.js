@@ -20,13 +20,13 @@
  * Listen here: https://youtu.be/X0MDALpV29s
  *
  */
-$(document).on('onload', function(){
+$(document).on('load', function(){
     document.getElementById("my_audio").play();
     console.log('Shaadi me zaroor aana');
 });
 
 // Set the date we're counting down to
-var countDownDate = new Date("Jan 31, 2024 00:00:00").getTime();
+var countDownDate = new Date("Jan 31, 2024 12:00:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -87,7 +87,7 @@ var styles2 = [
 
 console.log('\n\n%c SAVE THE DATE: 31st Jan, 2024!', styles);
 
-console.log('%cYour presence is requested!%c\n\nRegards: Akhilesh Joshi', styles1, styles2);
+console.log('%cYour presence is requested!%c\n\nRegards: Akhilesh', styles1, styles2);
 
 console.log(
     `%cShaadi me zaroor aana!\n\n`,
