@@ -20,7 +20,7 @@
  * Listen here: https://youtu.be/X0MDALpV29s
  *
  */
-$(document).onload(function(){
+$(document).on('click', function(){
     document.getElementById("my_audio").play();
     console.log('Shaadi me zaroor aana');
 });
@@ -87,7 +87,7 @@ var styles2 = [
 
 console.log('\n\n%c SAVE THE DATE: 31st Jan, 2024!', styles);
 
-console.log('%cYour presence is requested!%c\n\nRegards: Akhilesh', styles1, styles2);
+console.log('%cYour presence is requested!%c\n\nRegards: Akhilesh Joshi', styles1, styles2);
 
 console.log(
     `%cShaadi me zaroor aana!\n\n`,
