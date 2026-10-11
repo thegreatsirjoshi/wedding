@@ -515,14 +515,14 @@
   </div>
 
   <audio id="wedding-audio" loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=indian-traditional-112282.mp3" type="audio/mpeg">
+    <source src="./assets/mp3/song.mp3" type="audio/mpeg">
   </audio>
 
   <script>
-    /* Google Sheets API Script URL */
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzEX4JpsNxzeu0g5xyUkaBu7oOm0iRKM0XEg5EF8LkJrgKR9YoF0cg-rPz-wJILSQtT/exec";
+   /* Google Sheets API Script URL */
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzEX4JpsNxzeu0g5xyUkaBu7oOm0iRKM0XEg5EF8LkJrgKR9YoF0cg-rPz-wJILSQtT/exec";
 
-    /* Load Wishes on Page Load */
+/* Load Wishes on Page Load */
     async function loadWishes() {
       const list = document.getElementById("wishes-list");
       try {
@@ -643,56 +643,98 @@
       }
     }
 
-    /* Falling Petals Canvas (Enlarged) */
-    const canvas = document.getElementById("petal-canvas");
-    const ctx = canvas.getContext("2d");
-    let width = canvas.width = window.innerWidth;
-    let height = canvas.height = window.innerHeight;
+/* Falling Petals Canvas (Shaped as Flowers & Leaves) */
+const canvas = document.getElementById("petal-canvas");
+const ctx = canvas.getContext("2d");
+let width = canvas.width = window.innerWidth;
+let height = canvas.height = window.innerHeight;
 
-    window.addEventListener("resize", () => {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-    });
+window.addEventListener("resize", () => {
+  width = canvas.width = window.innerWidth;
+  height = canvas.height = window.innerHeight;
+});
 
-    const petals = Array.from({ length: 25 }, () => ({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      r: Math.random() * 14 + 10,
-      d: Math.random() * 30,
-      color: Math.random() > 0.5 ? '#f8e5e5' : '#ebd0c9',
-      tilt: Math.random() * 15 - 15,
-      tiltAngleIncremental: Math.random() * 0.05 + 0.03,
-      tiltAngle: 0
-    }));
+/* Define shape paths for the falling elements */
+const shapePaths = {
+  flower: [
+    {cx: 0, cy: -5, r: 4}, // top petal
+    {cx: 5, cy: 0, r: 4}, // right petal
+    {cx: 0, cy: 5, r: 4}, // bottom petal
+    {cx: -5, cy: 0, r: 4}, // left petal
+    {cx: 0, cy: 0, r: 3, center: true} // center
+  ],
+  leaf: [
+    {x: 0, y: -10}, // top
+    {x: 6, y: -2}, // upper right curve
+    {x: 0, y: 10}, // bottom point
+    {x: -6, y: -2}, // upper left curve
+  ]
+};
 
-    function drawPetals() {
-      ctx.clearRect(0, 0, width, height);
-      petals.forEach(p => {
+const petals = Array.from({ length: 20 }, () => {
+  const isFlower = Math.random() > 0.4;
+  return {
+    x: Math.random() * width,
+    y: Math.random() * height,
+    type: isFlower ? 'flower' : 'leaf',
+    r: isFlower ? (Math.random() * 4 + 7) : (Math.random() * 6 + 9),
+    d: Math.random() * 30,
+    color: isFlower ? (Math.random() > 0.5 ? '#f8e5e5' : '#ebd0c9') : (Math.random() > 0.5 ? '#e2efda' : '#c5e0b4'),
+    tilt: Math.random() * 15 - 15,
+    tiltAngleIncremental: Math.random() * 0.04 + 0.02,
+    tiltAngle: 0
+  };
+});
+
+function drawPetals() {
+  ctx.clearRect(0, 0, width, height);
+  petals.forEach(p => {
+    ctx.save();
+    ctx.translate(p.x + p.tilt, p.y);
+    ctx.rotate(p.tiltAngle);
+    ctx.fillStyle = p.color;
+
+    if (p.type === 'flower') {
+      shapePaths.flower.forEach(petal => {
         ctx.beginPath();
-        ctx.lineWidth = p.r * 0.75;
-        ctx.strokeStyle = p.color;
-        ctx.moveTo(p.x + p.tilt + p.r / 2, p.y);
-        ctx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r / 2);
-        ctx.stroke();
-      });
-      updatePetals();
-    }
-
-    let angle = 0;
-    function updatePetals() {
-      angle += 0.01;
-      petals.forEach(p => {
-        p.tiltAngle += p.tiltAngleIncremental;
-        p.y += (Math.cos(angle + p.d) + 1 + p.r / 3) / 2;
-        p.x += Math.sin(angle) * 1.2;
-        if (p.y > height) {
-          p.y = -20;
-          p.x = Math.random() * width;
+        if(petal.center) {
+          ctx.fillStyle = '#fceecb'; // light yellow center
+          ctx.arc(petal.cx, petal.cy, p.r * 0.35, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.fillStyle = p.color; // Reset for outer petals
+        } else {
+          ctx.ellipse(petal.cx * (p.r/10), petal.cy * (p.r/10), p.r * 0.45, p.r * 0.65, Math.PI/2, 0, Math.PI * 2);
+          ctx.fill();
         }
       });
+    } else { // leaf shape
+      ctx.beginPath();
+      ctx.moveTo(shapePaths.leaf[0].x * (p.r/10), shapePaths.leaf[0].y * (p.r/10));
+      ctx.bezierCurveTo(shapePaths.leaf[1].x * (p.r/10), shapePaths.leaf[1].y * (p.r/10), p.r * 0.8, 0, shapePaths.leaf[2].x * (p.r/10), shapePaths.leaf[2].y * (p.r/10));
+      ctx.bezierCurveTo(-p.r * 0.8, 0, shapePaths.leaf[3].x * (p.r/10), shapePaths.leaf[3].y * (p.r/10), shapePaths.leaf[0].x * (p.r/10), shapePaths.leaf[0].y * (p.r/10));
+      ctx.fill();
     }
 
-    setInterval(drawPetals, 20);
+    ctx.restore();
+  });
+  updatePetals();
+}
+
+let angle = 0;
+function updatePetals() {
+  angle += 0.01;
+  petals.forEach(p => {
+    p.tiltAngle += p.tiltAngleIncremental;
+    p.y += (Math.cos(angle + p.d) + 1 + p.r / 3) / 2.5;
+    p.x += Math.sin(angle) * 1.1;
+    if (p.y > height) {
+      p.y = -20;
+      p.x = Math.random() * width;
+    }
+  });
+}
+
+setInterval(drawPetals, 20);
   </script>
 </body>
 </html>
