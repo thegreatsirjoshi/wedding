@@ -24,7 +24,7 @@
       --royal-gold-dark: #b8860b;
       --velvet-maroon: #601424;
       --text-dark: #3a2e2b;
-      --glass-bg: rgba(255, 255, 255, 0.78);
+      --glass-bg: rgba(255, 255, 255, 0.82);
       --glass-border: rgba(212, 175, 55, 0.35);
     }
 
@@ -118,10 +118,10 @@
 </head>
 <body class="bg-pattern min-h-screen text-slate-800 antialiased selection:bg-pink-200 selection:text-maroon-900">
 
-  <!-- Interactive Petals Canvas Overlay -->
+  <!-- Interactive Enlarged Petals Canvas Overlay -->
   <canvas id="petal-canvas"></canvas>
 
-  <!-- Top Left Floral Arch Corner -->
+  <!-- Top Left Floral Corner -->
   <div class="corner-floral top-0 left-0 w-48 sm:w-72 md:w-96">
     <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto opacity-90">
       <g transform="translate(10, -20) scale(0.85)">
@@ -137,7 +137,7 @@
     </svg>
   </div>
 
-  <!-- Top Right Floral Arch Corner -->
+  <!-- Top Right Floral Corner -->
   <div class="corner-floral top-0 right-0 w-48 sm:w-72 md:w-96 transform scale-x-[-1]">
     <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto opacity-90">
       <g transform="translate(10, -20) scale(0.85)">
@@ -153,7 +153,7 @@
     </svg>
   </div>
 
-  <!-- Floating Top Navigation Header -->
+  <!-- Navigation Header -->
   <nav class="fixed top-0 left-0 w-full z-40 bg-white/60 backdrop-blur-md border-b border-amber-200/50 py-3 px-4">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
       <a href="#hero" class="font-royal text-sm md:text-base font-bold text-amber-800 tracking-wider flex items-center gap-2">
@@ -175,7 +175,7 @@
   <!-- MAIN CONTAINER -->
   <main class="relative z-10 pt-20">
 
-    <!-- HERO / BANNER SECTION -->
+    <!-- HERO SECTION -->
     <section id="hero" class="min-h-[92vh] flex flex-col items-center justify-center px-4 relative py-12">
       
       <div class="text-center mb-6">
@@ -259,7 +259,7 @@
       </div>
     </section>
 
-    <!-- FAMILY LINEAGE & BLESSINGS SECTION (PARIVAR) -->
+    <!-- FAMILY LINEAGE & BLESSINGS SECTION -->
     <section id="family" class="py-16 px-4 max-w-5xl mx-auto">
       <div class="text-center mb-10">
         <p class="font-hindi text-xl text-amber-700">परिवार एवं आशीर्वाद</p>
@@ -312,10 +312,6 @@
               <p class="text-[11px] uppercase tracking-widest text-amber-800 font-bold mb-1"><i class="fa-solid fa-user-group mr-1"></i> Parents</p>
               <p class="text-sm font-marcellus font-semibold text-stone-800">Mr. Sudhir Kumar Mishra</p>
               <p class="text-sm font-marcellus font-semibold text-stone-800">Mrs. Santwana Mishra</p>
-            </div>
-             <div>
-              <p class="text-[11px] uppercase tracking-widest text-rose-800 font-bold mb-1"><i class="fa-solid fa-child mr-1"></i> Brother</p>
-              <p class="text-sm font-marcellus font-semibold text-stone-800">Shishir Mishra</p>
             </div>
           </div>
         </div>
@@ -474,7 +470,7 @@
             <input id="wish-relation" type="text" placeholder="Relation (e.g. Friend, Family)" class="px-4 py-2.5 rounded-xl border border-amber-200 bg-white/90 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500">
           </div>
           <textarea id="wish-text" required rows="3" placeholder="Write your warm blessing or message for the couple..." class="w-full px-4 py-2.5 rounded-xl border border-amber-200 bg-white/90 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
-          <button type="submit" class="bg-amber-800 hover:bg-amber-900 text-white font-bold text-xs uppercase tracking-wider px-6 py-2.5 rounded-xl transition">
+          <button type="submit" id="submit-btn" class="bg-amber-800 hover:bg-amber-900 text-white font-bold text-xs uppercase tracking-wider px-6 py-2.5 rounded-xl transition">
             <i class="fa-solid fa-paper-plane mr-1.5"></i> Post Blessing
           </button>
         </form>
@@ -483,20 +479,9 @@
 
         <div>
           <h4 class="font-royal text-sm uppercase tracking-widest text-amber-900 font-bold mb-3">Recent Blessings</h4>
-          <div id="wishes-list" class="space-y-3 max-h-64 overflow-y-auto pr-1">
-            <div class="bg-white/80 p-3.5 rounded-xl border border-amber-100 text-xs">
-              <div class="flex justify-between font-bold text-amber-900 mb-1">
-                <span>Akhilesh Joshi <span class="text-stone-400 font-normal">(Brother)</span></span>
-                <span class="text-[10px] text-stone-400">Just now</span>
-              </div>
-              <p class="text-stone-700 italic">"Wishing Swati & Utkarsh a lifetime filled with unconditional love, laughter, and endless happiness!"</p>
-            </div>
-            <div class="bg-white/80 p-3.5 rounded-xl border border-amber-100 text-xs">
-              <div class="flex justify-between font-bold text-amber-900 mb-1">
-                <span>Vinit Shahdeo <span class="text-stone-400 font-normal">(Well-wisher)</span></span>
-                <span class="text-[10px] text-stone-400">2 hours ago</span>
-              </div>
-              <p class="text-stone-700 italic">"Heartiest congratulations! May Lord Ganesha bless your new journey together."</p>
+          <div id="wishes-list" class="space-y-3 max-h-72 overflow-y-auto pr-1">
+            <div class="bg-white/80 p-4 rounded-xl border border-amber-100 text-xs text-stone-500 text-center">
+              Loading blessings from family & friends...
             </div>
           </div>
         </div>
@@ -530,10 +515,81 @@
   </div>
 
   <audio id="wedding-audio" loop>
-    <source src="./assets/mp3/song.mp3" type="audio/mpeg">
+    <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=indian-traditional-112282.mp3" type="audio/mpeg">
   </audio>
 
   <script>
+    /* Google Sheets API Script URL */
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzEX4JpsNxzeu0g5xyUkaBu7oOm0iRKM0XEg5EF8LkJrgKR9YoF0cg-rPz-wJILSQtT/exec";
+
+    /* Load Wishes on Page Load */
+    async function loadWishes() {
+      const list = document.getElementById("wishes-list");
+      try {
+        const response = await fetch(SCRIPT_URL);
+        const data = await response.json();
+        
+        if (data && data.length > 0) {
+          list.innerHTML = "";
+          data.forEach(item => {
+            const card = document.createElement("div");
+            card.className = "bg-white/90 p-3.5 rounded-xl border border-amber-100 text-xs shadow-sm";
+            card.innerHTML = `
+              <div class="flex justify-between font-bold text-amber-900 mb-1">
+                <span>${item.name} ${item.relation ? `<span class="text-stone-400 font-normal">(${item.relation})</span>` : ''}</span>
+                <span class="text-[10px] text-stone-400">${item.date || ''}</span>
+              </div>
+              <p class="text-stone-700 italic">"${item.wish}"</p>
+            `;
+            list.appendChild(card);
+          });
+        } else {
+          list.innerHTML = '<div class="bg-white/80 p-4 rounded-xl border border-amber-100 text-xs text-stone-500 text-center">No blessings yet. Be the first to leave one!</div>';
+        }
+      } catch (err) {
+        console.error("Error loading wishes:", err);
+        list.innerHTML = '<div class="bg-white/80 p-4 rounded-xl border border-amber-100 text-xs text-stone-500 text-center">Unable to load wishes at the moment.</div>';
+      }
+    }
+
+    /* Submit Wish to Google Sheets */
+    async function submitWish(e) {
+      e.preventDefault();
+      const name = document.getElementById("wish-name").value.trim();
+      const relation = document.getElementById("wish-relation").value.trim();
+      const wish = document.getElementById("wish-text").value.trim();
+      const submitBtn = document.getElementById("submit-btn");
+
+      if (name && wish) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-1.5"></i> Posting...';
+
+        try {
+          await fetch(SCRIPT_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "text/plain;charset=utf-8" },
+            body: JSON.stringify({ name, relation, wish })
+          });
+
+          alert("Thank you for your warm blessings!");
+          document.getElementById("wish-name").value = "";
+          document.getElementById("wish-relation").value = "";
+          document.getElementById("wish-text").value = "";
+          
+          setTimeout(loadWishes, 1500); // Reload list after short delay
+        } catch (err) {
+          console.error("Error submitting wish:", err);
+          alert("Error sending blessing. Please try again!");
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane mr-1.5"></i> Post Blessing';
+        }
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", loadWishes);
+
     /* Countdown Timer */
     const weddingDate = new Date("November 24, 2026 10:00:00").getTime();
 
@@ -587,33 +643,7 @@
       }
     }
 
-    /* Submit Wish */
-    function submitWish(e) {
-      e.preventDefault();
-      const name = document.getElementById("wish-name").value.trim();
-      const relation = document.getElementById("wish-relation").value.trim();
-      const text = document.getElementById("wish-text").value.trim();
-
-      if (name && text) {
-        const list = document.getElementById("wishes-list");
-        const card = document.createElement("div");
-        card.className = "bg-white/80 p-3.5 rounded-xl border border-amber-100 text-xs animate-fade-in";
-        card.innerHTML = `
-          <div class="flex justify-between font-bold text-amber-900 mb-1">
-            <span>${name} ${relation ? `<span class="text-stone-400 font-normal">(${relation})</span>` : ''}</span>
-            <span class="text-[10px] text-stone-400">Just now</span>
-          </div>
-          <p class="text-stone-700 italic">"${text}"</p>
-        `;
-        list.prepend(card);
-        document.getElementById("wish-name").value = "";
-        document.getElementById("wish-relation").value = "";
-        document.getElementById("wish-text").value = "";
-        alert("Thank you for your warm blessings!");
-      }
-    }
-
-    /* Falling Petals Canvas */
+    /* Falling Petals Canvas (Enlarged) */
     const canvas = document.getElementById("petal-canvas");
     const ctx = canvas.getContext("2d");
     let width = canvas.width = window.innerWidth;
@@ -624,14 +654,14 @@
       height = canvas.height = window.innerHeight;
     });
 
-    const petals = Array.from({ length: 30 }, () => ({
+    const petals = Array.from({ length: 25 }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      r: Math.random() * 6 + 4,
+      r: Math.random() * 14 + 10,
       d: Math.random() * 30,
       color: Math.random() > 0.5 ? '#f8e5e5' : '#ebd0c9',
-      tilt: Math.random() * 10 - 10,
-      tiltAngleIncremental: Math.random() * 0.07 + 0.05,
+      tilt: Math.random() * 15 - 15,
+      tiltAngleIncremental: Math.random() * 0.05 + 0.03,
       tiltAngle: 0
     }));
 
@@ -639,10 +669,10 @@
       ctx.clearRect(0, 0, width, height);
       petals.forEach(p => {
         ctx.beginPath();
-        ctx.lineWidth = p.r / 2;
+        ctx.lineWidth = p.r * 0.75;
         ctx.strokeStyle = p.color;
-        ctx.moveTo(p.x + p.tilt + p.r / 4, p.y);
-        ctx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r / 4);
+        ctx.moveTo(p.x + p.tilt + p.r / 2, p.y);
+        ctx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r / 2);
         ctx.stroke();
       });
       updatePetals();
@@ -653,10 +683,10 @@
       angle += 0.01;
       petals.forEach(p => {
         p.tiltAngle += p.tiltAngleIncremental;
-        p.y += (Math.cos(angle + p.d) + 1 + p.r / 2) / 2;
-        p.x += Math.sin(angle);
+        p.y += (Math.cos(angle + p.d) + 1 + p.r / 3) / 2;
+        p.x += Math.sin(angle) * 1.2;
         if (p.y > height) {
-          p.y = -10;
+          p.y = -20;
           p.x = Math.random() * width;
         }
       });
