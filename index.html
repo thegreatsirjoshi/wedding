@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Official Wedding Invitation for Swati & Utkarsh. Join us in celebrating our auspicious union on 24th November 2026 at Anjani Garden, Prayagraj." />
-  <meta name="author" content="Akhilesh Joshi & Vinit Shahdeo" />
+  <meta name="description" content="Official Wedding Invitation for Utkarsh & Swati. Join us in celebrating our auspicious union." />
+  <meta name="author" content="Mishra Family" />
   
-  <title>Swati & Utkarsh | Wedding Invitation</title>
+  <title>Utkarsh & Swati | Royal Wedding Invitation</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,20 +36,17 @@
       scroll-behavior: smooth;
     }
 
-    /* Custom Fonts */
     .font-royal { font-family: 'Cinzel Decorative', serif; }
     .font-script { font-family: 'Great Vibes', cursive; }
     .font-hindi { font-family: 'Yatra One', cursive; }
     .font-marcellus { font-family: 'Marcellus', serif; }
 
-    /* Background Pattern & Graphics */
     .bg-pattern {
       background-image: radial-gradient(rgba(212, 175, 55, 0.12) 1px, transparent 1px), radial-gradient(rgba(96, 20, 36, 0.05) 1px, var(--bg-cream) 1px);
       background-size: 40px 40px;
       background-position: 0 0, 20px 20px;
     }
 
-    /* Glassmorphism Card */
     .glass-card {
       background: var(--glass-bg);
       backdrop-filter: blur(12px);
@@ -58,7 +55,6 @@
       box-shadow: 0 15px 35px rgba(96, 20, 36, 0.08);
     }
 
-    /* Gold Foil Text & Border Effects */
     .gold-gradient-text {
       background: linear-gradient(135deg, #b8860b 0%, #ffd700 50%, #d4af37 100%);
       -webkit-background-clip: text;
@@ -77,7 +73,6 @@
       pointer-events: none;
     }
 
-    /* Floating Petals Canvas */
     #petal-canvas {
       position: fixed;
       top: 0;
@@ -88,7 +83,6 @@
       z-index: 20;
     }
 
-    /* Corner Floral Artwork */
     .corner-floral {
       position: absolute;
       pointer-events: none;
@@ -96,7 +90,6 @@
       filter: drop-shadow(0 8px 12px rgba(0,0,0,0.08));
     }
 
-    /* Custom Scrollbar */
     ::-webkit-scrollbar { width: 8px; }
     ::-webkit-scrollbar-track { background: var(--bg-cream); }
     ::-webkit-scrollbar-thumb { background: var(--royal-gold); border-radius: 4px; }
@@ -114,14 +107,20 @@
       border-color: var(--royal-gold);
       box-shadow: 0 4px 15px rgba(96, 20, 36, 0.3);
     }
+
+    .venue-tab.active {
+      background-color: #8b263e;
+      color: #ffffff;
+      border-color: #d4af37;
+    }
   </style>
 </head>
 <body class="bg-pattern min-h-screen text-slate-800 antialiased selection:bg-pink-200 selection:text-maroon-900">
 
-  <!-- Interactive Enlarged Petals Canvas Overlay -->
+  <!-- Interactive Canvas Overlay -->
   <canvas id="petal-canvas"></canvas>
 
-  <!-- Top Left Floral Corner -->
+  <!-- Top Left Corner Floral Artwork -->
   <div class="corner-floral top-0 left-0 w-48 sm:w-72 md:w-96">
     <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto opacity-90">
       <g transform="translate(10, -20) scale(0.85)">
@@ -137,7 +136,7 @@
     </svg>
   </div>
 
-  <!-- Top Right Floral Corner -->
+  <!-- Top Right Corner Floral Artwork -->
   <div class="corner-floral top-0 right-0 w-48 sm:w-72 md:w-96 transform scale-x-[-1]">
     <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto opacity-90">
       <g transform="translate(10, -20) scale(0.85)">
@@ -153,17 +152,17 @@
     </svg>
   </div>
 
-  <!-- Navigation Header -->
+  <!-- Navigation Bar -->
   <nav class="fixed top-0 left-0 w-full z-40 bg-white/60 backdrop-blur-md border-b border-amber-200/50 py-3 px-4">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
       <a href="#hero" class="font-royal text-sm md:text-base font-bold text-amber-800 tracking-wider flex items-center gap-2">
-        <span class="text-xl text-amber-600">𑁍</span> S & U
+        <span class="text-xl text-amber-600">𑁍</span> U & S
       </a>
       <div class="hidden md:flex space-x-6 text-xs uppercase tracking-widest font-semibold text-stone-700">
         <a href="#hero" class="hover:text-amber-700 transition">Home</a>
         <a href="#family" class="hover:text-amber-700 transition">Family</a>
         <a href="#itinerary" class="hover:text-amber-700 transition">Itinerary</a>
-        <a href="#venue" class="hover:text-amber-700 transition">Venue</a>
+        <a href="#venue" class="hover:text-amber-700 transition">Venues</a>
         <a href="#blessings" class="hover:text-amber-700 transition">Blessings</a>
       </div>
       <a href="#blessings" class="bg-amber-700 hover:bg-amber-800 text-amber-50 text-xs uppercase tracking-widest px-4 py-2 rounded-full border border-amber-400 shadow-sm transition">
@@ -196,15 +195,15 @@
 
           <div class="py-2">
             <h1 class="font-script text-5xl sm:text-7xl md:text-8xl text-stone-800 leading-tight">
-              Utkarsh
+              Utkarsh 
             </h1>
             <div class="my-1 flex items-center justify-center gap-4">
               <span class="h-[1px] w-12 bg-amber-400"></span>
               <span class="font-royal text-2xl md:text-3xl gold-gradient-text font-bold">&</span>
               <span class="h-[1px] w-12 bg-amber-400"></span>
             </div>
-             <h1 class="font-script text-5xl sm:text-7xl md:text-8xl text-stone-800 leading-tight">
-              Swati
+            <h1 class="font-script text-5xl sm:text-7xl md:text-8xl text-stone-800 leading-tight">
+              Swati 
             </h1>
           </div>
 
@@ -268,10 +267,10 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
+        
         <!-- Groom's Family Card -->
         <div class="glass-card rounded-3xl p-6 sm:p-8 border border-amber-300 shadow-lg text-center relative overflow-hidden">
-          <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-rose-700 to-amber-600"></div>
+          <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-amber-600 to-rose-700"></div>
           <h3 class="font-royal text-2xl text-amber-900 font-bold mb-4">Groom's Family</h3>
           <p class="font-script text-3xl text-stone-800 mb-6">Utkarsh Mishra</p>
 
@@ -287,24 +286,25 @@
               <p class="text-sm font-marcellus font-semibold text-stone-800">Mr. Sudhir Kumar Mishra</p>
               <p class="text-sm font-marcellus font-semibold text-stone-800">Mrs. Santwana Mishra</p>
             </div>
-             <div>
+            <hr class="border-amber-200/60">
+            <div>
               <p class="text-[11px] uppercase tracking-widest text-rose-800 font-bold mb-1"><i class="fa-solid fa-child mr-1"></i> Brother</p>
-              <p class="text-sm font-marcellus font-semibold text-stone-800">Shrish Mishra</p>
+              <p class="text-sm font-marcellus font-semibold text-stone-800">Adv. Shrish Mishra</p>
             </div>
           </div>
         </div>
-        
+
         <!-- Bride's Family Card -->
         <div class="glass-card rounded-3xl p-6 sm:p-8 border border-amber-300 shadow-lg text-center relative overflow-hidden">
-          <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-amber-600 to-rose-700"></div>
+          <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-rose-700 to-amber-600"></div>
           <h3 class="font-royal text-2xl text-amber-900 font-bold mb-4">Bride's Family</h3>
           <p class="font-script text-3xl text-stone-800 mb-6">Swati Mishra</p>
 
           <div class="space-y-4 text-left bg-white/70 p-5 rounded-2xl border border-amber-100">
             <div>
               <p class="text-[11px] uppercase tracking-widest text-emerald-800 font-bold mb-1"><i class="fa-solid fa-seedling mr-1"></i> Grandparents</p>
-              <p class="text-sm font-marcellus font-semibold text-stone-800">Shree Shyama Nand Ram Lakhan Mishra</p>
-              <p class="text-sm font-marcellus font-semibold text-stone-800">Smt. Geeta Mishra</p>
+              <p class="text-sm font-marcellus font-semibold text-stone-800">Late Shree Shyama Nand Ram Lakhan Mishra</p>
+              <p class="text-sm font-marcellus font-semibold text-stone-800">Late Smt. Geeta Mishra</p>
             </div>
             <hr class="border-amber-200/60">
             <div>
@@ -315,17 +315,15 @@
             <hr class="border-amber-200/60">
             <div>
               <p class="text-[11px] uppercase tracking-widest text-rose-800 font-bold mb-1"><i class="fa-solid fa-child mr-1"></i> Brother</p>
-              <p class="text-sm font-marcellus font-semibold text-stone-800">Shubham Mishra</p>
+              <p class="text-sm font-marcellus font-semibold text-stone-800">Dr. Shubham Mishra</p>
             </div>
           </div>
         </div>
 
-        
-
       </div>
     </section>
 
-    <!-- ITINERARY & MULTI-DAY EVENTS -->
+    <!-- ITINERARY & EVENTS SECTION -->
     <section id="itinerary" class="py-16 px-4 max-w-5xl mx-auto">
       <div class="text-center mb-10">
         <p class="font-hindi text-xl text-amber-700">मांगल्य महोत्सव</p>
@@ -334,63 +332,30 @@
       </div>
 
       <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8">
-        <button onclick="switchTab('tab-phere')" id="btn-tab-phere" class="event-tab px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase border border-amber-300 transition bg-white text-stone-700">
-          <i class="fa-solid fa-fire-flame-curved mr-1.5 text-rose-600"></i> Vivah Phere
+        <button onclick="switchTab('tab-phere')" id="btn-tab-phere" class="event-tab active px-6 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase border border-amber-300 transition">
+          <i class="fa-solid fa-fire-flame-curved mr-1.5 text-rose-500"></i> Vivah Phere (24 Nov)
         </button>
-        <button onclick="switchTab('tab-reception')" id="btn-tab-reception" class="event-tab px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase border border-amber-300 transition bg-white text-stone-700">
-          <i class="fa-solid fa-champagne-glasses mr-1.5 text-amber-600"></i> Reception
+        <button onclick="switchTab('tab-reception')" id="btn-tab-reception" class="event-tab px-6 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase border border-amber-300 transition bg-white text-stone-700">
+          <i class="fa-solid fa-champagne-glasses mr-1.5 text-amber-600"></i> Reception (27 Nov)
         </button>
       </div>
 
-      <div class="glass-card rounded-3xl p-6 sm:p-10 border border-amber-300/80 shadow-xl min-h-[300px]">
+      <div class="glass-card rounded-3xl p-6 sm:p-10 border border-amber-300/80 shadow-xl min-h-[260px]">
         
-        <!-- Haldi -->
-        <div id="tab-haldi" class="tab-content space-y-4">
-          <div class="flex flex-col md:flex-row justify-between md:items-center border-b border-amber-200 pb-4 gap-2">
-            <div>
-              <span class="bg-amber-100 text-amber-900 text-xs font-bold px-3 py-1 rounded-full uppercase">Pre-Wedding Ritual</span>
-              <h3 class="font-royal text-2xl text-amber-900 font-bold mt-1">Ubtan & Haldi Ceremony</h3>
-            </div>
-            <div class="text-left md:text-right text-stone-600 text-sm font-semibold">
-              <p><i class="fa-regular fa-clock text-amber-600 mr-1"></i> 23rd Nov 2026 • 10:00 AM Onwards</p>
-              <p><i class="fa-solid fa-shirt text-amber-600 mr-1"></i> Dress Code: <span class="text-amber-800">Bright Yellow / Sunshine Pastel</span></p>
-            </div>
-          </div>
-          <p class="text-stone-600 text-sm leading-relaxed">
-            A joyous morning of turmeric application, folk songs, and flower showers to bless the bride and groom with radiance and good fortune.
-          </p>
-        </div>
-
-        <!-- Mehendi -->
-        <div id="tab-mehendi" class="tab-content hidden space-y-4">
-          <div class="flex flex-col md:flex-row justify-between md:items-center border-b border-emerald-200 pb-4 gap-2">
-            <div>
-              <span class="bg-emerald-100 text-emerald-900 text-xs font-bold px-3 py-1 rounded-full uppercase">Music & Henna Night</span>
-              <h3 class="font-royal text-2xl text-emerald-900 font-bold mt-1">Mehendi & Sangeet Utsav</h3>
-            </div>
-            <div class="text-left md:text-right text-stone-600 text-sm font-semibold">
-              <p><i class="fa-regular fa-clock text-emerald-600 mr-1"></i> 23rd Nov 2026 • 5:00 PM Onwards</p>
-              <p><i class="fa-solid fa-shirt text-emerald-600 mr-1"></i> Dress Code: <span class="text-emerald-800">Sage & Emerald Ethnic</span></p>
-            </div>
-          </div>
-          <p class="text-stone-600 text-sm leading-relaxed">
-            An evening filled with intricate henna designs, lively music, and family dance performances celebrating love and togetherness.
-          </p>
-        </div>
-
         <!-- Vivah Phere -->
-        <div id="tab-phere" class="tab-content hidden space-y-4">
+        <div id="tab-phere" class="tab-content space-y-4">
           <div class="flex flex-col md:flex-row justify-between md:items-center border-b border-rose-200 pb-4 gap-2">
             <div>
-              <span class="bg-rose-100 text-rose-900 text-xs font-bold px-3 py-1 rounded-full uppercase">The Main Ceremony</span>
+              <span class="bg-rose-100 text-rose-900 text-xs font-bold px-3 py-1 rounded-full uppercase">Main Wedding Ceremony</span>
               <h3 class="font-royal text-2xl text-rose-950 font-bold mt-1">Baraat Swagat & Shubh Phere</h3>
             </div>
             <div class="text-left md:text-right text-stone-600 text-sm font-semibold">
-              <p><i class="fa-regular fa-clock text-rose-700 mr-1"></i> 24th Nov 2026 • 07:00 PM Onwards</p>
+              <p><i class="fa-regular fa-clock text-rose-700 mr-1"></i> Tuesday, 24th Nov 2026 • 7:00 PM Onwards</p>
+              <p><i class="fa-solid fa-location-dot text-rose-700 mr-1"></i> Venue: <span class="text-rose-900 font-bold">Anjani Garden & Resort</span></p>
             </div>
           </div>
           <p class="text-stone-600 text-sm leading-relaxed">
-            Witness the sacred vows and holy rituals as Swati & Utkarsh embark on their lifelong marital journey around the sacred fire.
+            Witness the sacred union of Utkarsh & Swati as they take seven vows around the holy fire amidst Vedic mantras, blessings of elders, and Shehnai melodies.
           </p>
         </div>
 
@@ -399,41 +364,54 @@
           <div class="flex flex-col md:flex-row justify-between md:items-center border-b border-amber-200 pb-4 gap-2">
             <div>
               <span class="bg-amber-100 text-amber-900 text-xs font-bold px-3 py-1 rounded-full uppercase">Grand Evening Banquet</span>
-              <h3 class="font-royal text-2xl text-amber-900 font-bold mt-1">Reception & Feast</h3>
+              <h3 class="font-royal text-2xl text-amber-900 font-bold mt-1">Reception & Dinner Feast</h3>
             </div>
             <div class="text-left md:text-right text-stone-600 text-sm font-semibold">
-              <p><i class="fa-regular fa-clock text-amber-600 mr-1"></i> 27th Nov 2026 • 08:00 PM Onwards</p>
+              <p><i class="fa-regular fa-clock text-amber-600 mr-1"></i> Friday, 27th Nov 2026 • 8:00 PM Onwards</p>
+              <p><i class="fa-solid fa-location-dot text-amber-600 mr-1"></i> Venue: <span class="text-amber-900 font-bold">Mathur Vaishya Bhavan</span></p>
             </div>
           </div>
           <p class="text-stone-600 text-sm leading-relaxed">
-            Celebrate the newly wedded couple with a grand royal dinner, music, and joyful greetings with family and friends.
+            Join us for a celebratory evening of blessings, royal dining feast, and photography with the newly wedded couple and honored guests.
           </p>
         </div>
 
       </div>
     </section>
 
-    <!-- VENUE LOCATION SECTION -->
+    <!-- VENUES LOCATION SECTION WITH DUAL MAP TABS -->
     <section id="venue" class="py-16 px-4 max-w-5xl mx-auto">
       <div class="text-center mb-8">
         <p class="font-hindi text-xl text-amber-700">स्थान एवं पता</p>
-        <h2 class="font-royal text-3xl text-stone-800 font-bold">The Venue</h2>
-        <p class="text-sm text-stone-600 mt-1">Anjani Garden & Resort, Prayagraj, Uttar Pradesh</p>
+        <h2 class="font-royal text-3xl text-stone-800 font-bold">Event Locations</h2>
+        <p class="text-sm text-stone-600 mt-1">Directions & Details for Wedding Ceremonies in Prayagraj</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+      <!-- Venue Switcher Buttons -->
+      <div class="flex justify-center gap-3 mb-6">
+        <button onclick="switchVenue('venue-anjani')" id="btn-venue-anjani" class="venue-tab active px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider border border-amber-300 transition">
+          <i class="fa-solid fa-hotel mr-1"></i> Wedding: Anjani Garden
+        </button>
+        <button onclick="switchVenue('venue-mathur')" id="btn-venue-mathur" class="venue-tab px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider border border-amber-300 transition bg-white text-stone-700">
+          <i class="fa-solid fa-building-columns mr-1"></i> Reception: Mathur Vaishya Bhavan
+        </button>
+      </div>
+
+      <!-- Venue Card 1: Anjani Garden -->
+      <div id="venue-anjani" class="venue-content grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
         <div class="glass-card rounded-3xl p-6 border border-amber-200 flex flex-col justify-between space-y-4">
           <div>
             <div class="w-12 h-12 bg-amber-100 text-amber-800 rounded-2xl flex items-center justify-center text-xl mb-4">
               <i class="fa-solid fa-hotel"></i>
             </div>
-            <h3 class="font-royal text-xl text-amber-900 font-bold">Anjani Garden</h3>
+            <h3 class="font-royal text-xl text-amber-900 font-bold">Anjani Garden & Resort</h3>
+            <p class="text-xs text-amber-800 font-semibold mt-1">Wedding Ceremony Venue (24 Nov)</p>
             <p class="text-xs text-stone-600 mt-2 leading-relaxed">
-              An elegant sprawling venue equipped with royal banquet halls and lush green lawns in Prayagraj.
+              Prayagraj, Uttar Pradesh. A regal venue with lush green lawns and open-air mandap setups.
             </p>
           </div>
           <div class="pt-4 border-t border-amber-200/60 text-xs text-stone-600 space-y-2">
-            <p><i class="fa-solid fa-phone text-amber-700 mr-2"></i> Helplines: +91 7007237187</p>
+            <p><i class="fa-solid fa-phone text-amber-700 mr-2"></i> Helpline: +91 7007237187</p>
             <p><i class="fa-solid fa-square-parking text-amber-700 mr-2"></i> Valet Parking Available</p>
           </div>
           <a href="https://www.google.com/maps/place/Anjani+Garden+%26+Resort/@25.427431,81.9348063,17z" target="_blank" rel="noopener" class="block text-center bg-amber-700 hover:bg-amber-800 text-white text-xs uppercase font-bold py-3 rounded-xl transition">
@@ -451,6 +429,39 @@
           </iframe>
         </div>
       </div>
+
+      <!-- Venue Card 2: Mathur Vaishya Bhavan -->
+      <div id="venue-mathur" class="venue-content hidden grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+        <div class="glass-card rounded-3xl p-6 border border-amber-200 flex flex-col justify-between space-y-4">
+          <div>
+            <div class="w-12 h-12 bg-amber-100 text-amber-800 rounded-2xl flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-building-columns"></i>
+            </div>
+            <h3 class="font-royal text-xl text-amber-900 font-bold">Mathur Vaishya Bhavan</h3>
+            <p class="text-xs text-amber-800 font-semibold mt-1">Reception Venue (27 Nov)</p>
+            <p class="text-xs text-stone-600 mt-2 leading-relaxed">
+              Lala Lajpat Rai Rd, New Katra, Old Katra, Prayagraj, Uttar Pradesh 211002.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-amber-200/60 text-xs text-stone-600 space-y-2">
+            <p><i class="fa-solid fa-phone text-amber-700 mr-2"></i> Helpline: +91 7007237187</p>
+            <p><i class="fa-solid fa-square-parking text-amber-700 mr-2"></i> Guest Parking Available</p>
+          </div>
+          <a href="https://www.google.com/maps/dir//Mathur+Vaishya+Bhavan,+FVF2%2BMR8,+Lala+Lajpat+Rai+Rd,+New+Katra,+Old+Katra,+Prayagraj,+Uttar+Pradesh+211002" target="_blank" rel="noopener" class="block text-center bg-amber-700 hover:bg-amber-800 text-white text-xs uppercase font-bold py-3 rounded-xl transition">
+            Open in Google Maps <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+          </a>
+        </div>
+
+        <div class="md:col-span-2 glass-card rounded-3xl overflow-hidden border border-amber-200 min-h-[300px]">
+          <iframe 
+            title="Mathur Vaishya Bhavan Map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.48281182283!2d81.84949827610116!3d25.474167921516086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399aca8e51943169%3A0x7cad169b8351fd5b!2sMathur%20Vaishya%20Bhavan!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+            class="w-full h-full min-h-[320px] border-0" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
     </section>
 
     <!-- BLESSINGS & VIRTUAL GUESTBOOK -->
@@ -458,7 +469,7 @@
       <div class="text-center mb-8">
         <p class="font-hindi text-xl text-amber-700">शुभकामनाएं एवं आशीर्वाद</p>
         <h2 class="font-royal text-3xl text-stone-800 font-bold">Leave Your Wishes</h2>
-        <p class="text-xs text-stone-500 mt-1">Send your heartwarming blessings to Swati & Utkarsh</p>
+        <p class="text-xs text-stone-500 mt-1">Send your heartwarming blessings to Utkarsh & Swati</p>
       </div>
 
       <div class="glass-card rounded-3xl p-6 sm:p-8 border border-amber-200 space-y-6">
@@ -491,7 +502,7 @@
   <!-- FOOTER -->
   <footer class="bg-stone-900 text-stone-300 py-12 px-4 text-center text-xs relative z-10 border-t-2 border-amber-500">
     <div class="max-w-2xl mx-auto space-y-4">
-      <p class="font-script text-4xl text-amber-300">Swati & Utkarsh</p>
+      <p class="font-script text-4xl text-amber-300">Utkarsh & Swati</p>
       <p class="text-stone-400 leading-relaxed">
         Can't wait to celebrate this auspicious moment of our family with you!
       </p>
@@ -499,7 +510,7 @@
         <i class="fa-solid fa-phone mr-1"></i> Helpline / WhatsApp: +91 7007237187
       </p>
       <div class="pt-4 border-t border-stone-800 text-stone-500 text-[11px] flex flex-col sm:flex-row justify-between items-center gap-2">
-        <span>Crafted with ❤️ for Swati & Utkarsh's Wedding</span>
+        <span>Crafted with ❤️ for Utkarsh & Swati's Wedding</span>
         <a href="https://twitter.com/aj3dii" target="_blank" class="hover:text-amber-400 transition"><i class="fa-brands fa-twitter mr-1"></i> @aj3dii</a>
       </div>
     </div>
@@ -513,14 +524,15 @@
   </div>
 
   <audio id="wedding-audio" loop>
-    <source src="./assets/mp3/song.mp3" type="audio/mpeg">
+    <source src="./assets/mp3/music2.mp3" type="audio/mpeg">
+    <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=indian-traditional-112282.mp3" type="audio/mpeg">
   </audio>
 
   <script>
-   /* Google Sheets API Script URL */
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzEX4JpsNxzeu0g5xyUkaBu7oOm0iRKM0XEg5EF8LkJrgKR9YoF0cg-rPz-wJILSQtT/exec";
+    /* Google Sheets API Script URL */
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzEX4JpsNxzeu0g5xyUkaBu7oOm0iRKM0XEg5EF8LkJrgKR9YoF0cg-rPz-wJILSQtT/exec";
 
-/* Load Wishes on Page Load */
+    /* Load Wishes on Page Load */
     async function loadWishes() {
       const list = document.getElementById("wishes-list");
       try {
@@ -575,7 +587,7 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzEX4JpsNxzeu0g5xyUk
           document.getElementById("wish-relation").value = "";
           document.getElementById("wish-text").value = "";
           
-          setTimeout(loadWishes, 1500); // Reload list after short delay
+          setTimeout(loadWishes, 1500);
         } catch (err) {
           console.error("Error submitting wish:", err);
           alert("Error sending blessing. Please try again!");
@@ -588,8 +600,8 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzEX4JpsNxzeu0g5xyUk
 
     window.addEventListener("DOMContentLoaded", loadWishes);
 
-    /* Countdown Timer */
-    const weddingDate = new Date("November 24, 2026 10:00:00").getTime();
+    /* Fixed Countdown Timer (ISO Format) */
+    const weddingDate = new Date("2026-11-24T19:00:00").getTime();
 
     function updateCountdown() {
       const now = new Date().getTime();
@@ -601,16 +613,21 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzEX4JpsNxzeu0g5xyUk
         const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-        document.getElementById("timer-days").innerText = days < 10 ? "0" + days : days;
-        document.getElementById("timer-hours").innerText = hours < 10 ? "0" + hours : hours;
-        document.getElementById("timer-mins").innerText = minutes < 10 ? "0" + minutes : minutes;
-        document.getElementById("timer-secs").innerText = seconds < 10 ? "0" + seconds : seconds;
+        const daysEl = document.getElementById("timer-days");
+        const hoursEl = document.getElementById("timer-hours");
+        const minsEl = document.getElementById("timer-mins");
+        const secsEl = document.getElementById("timer-secs");
+
+        if (daysEl) daysEl.innerText = days < 10 ? "0" + days : days;
+        if (hoursEl) hoursEl.innerText = hours < 10 ? "0" + hours : hours;
+        if (minsEl) minsEl.innerText = minutes < 10 ? "0" + minutes : minutes;
+        if (secsEl) secsEl.innerText = seconds < 10 ? "0" + seconds : seconds;
       }
     }
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    /* Tab Switcher */
+    /* Tab Switcher for Events */
     function switchTab(tabId) {
       document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
       document.querySelectorAll('.event-tab').forEach(el => {
@@ -619,6 +636,19 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzEX4JpsNxzeu0g5xyUk
       });
       document.getElementById(tabId).classList.remove('hidden');
       const activeBtn = document.getElementById('btn-' + tabId);
+      activeBtn.classList.add('active');
+      activeBtn.classList.remove('bg-white', 'text-stone-700');
+    }
+
+    /* Tab Switcher for Venues */
+    function switchVenue(venueId) {
+      document.querySelectorAll('.venue-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.venue-tab').forEach(el => {
+        el.classList.remove('active');
+        el.classList.add('bg-white', 'text-stone-700');
+      });
+      document.getElementById(venueId).classList.remove('hidden');
+      const activeBtn = document.getElementById('btn-' + venueId);
       activeBtn.classList.add('active');
       activeBtn.classList.remove('bg-white', 'text-stone-700');
     }
@@ -641,98 +671,97 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzEX4JpsNxzeu0g5xyUk
       }
     }
 
-/* Falling Petals Canvas (Shaped as Flowers & Leaves) */
-const canvas = document.getElementById("petal-canvas");
-const ctx = canvas.getContext("2d");
-let width = canvas.width = window.innerWidth;
-let height = canvas.height = window.innerHeight;
+    /* Falling Petals & Leaves Canvas Animation */
+    const canvas = document.getElementById("petal-canvas");
+    const ctx = canvas.getContext("2d");
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
 
-window.addEventListener("resize", () => {
-  width = canvas.width = window.innerWidth;
-  height = canvas.height = window.innerHeight;
-});
+    window.addEventListener("resize", () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
 
-/* Define shape paths for the falling elements */
-const shapePaths = {
-  flower: [
-    {cx: 0, cy: -5, r: 4}, // top petal
-    {cx: 5, cy: 0, r: 4}, // right petal
-    {cx: 0, cy: 5, r: 4}, // bottom petal
-    {cx: -5, cy: 0, r: 4}, // left petal
-    {cx: 0, cy: 0, r: 3, center: true} // center
-  ],
-  leaf: [
-    {x: 0, y: -10}, // top
-    {x: 6, y: -2}, // upper right curve
-    {x: 0, y: 10}, // bottom point
-    {x: -6, y: -2}, // upper left curve
-  ]
-};
+    const shapePaths = {
+      flower: [
+        {cx: 0, cy: -5, r: 4},
+        {cx: 5, cy: 0, r: 4},
+        {cx: 0, cy: 5, r: 4},
+        {cx: -5, cy: 0, r: 4},
+        {cx: 0, cy: 0, r: 3, center: true}
+      ],
+      leaf: [
+        {x: 0, y: -10},
+        {x: 6, y: -2},
+        {x: 0, y: 10},
+        {x: -6, y: -2}
+      ]
+    };
 
-const petals = Array.from({ length: 20 }, () => {
-  const isFlower = Math.random() > 0.4;
-  return {
-    x: Math.random() * width,
-    y: Math.random() * height,
-    type: isFlower ? 'flower' : 'leaf',
-    r: isFlower ? (Math.random() * 4 + 7) : (Math.random() * 6 + 9),
-    d: Math.random() * 30,
-    color: isFlower ? (Math.random() > 0.5 ? '#f8e5e5' : '#ebd0c9') : (Math.random() > 0.5 ? '#e2efda' : '#c5e0b4'),
-    tilt: Math.random() * 15 - 15,
-    tiltAngleIncremental: Math.random() * 0.04 + 0.02,
-    tiltAngle: 0
-  };
-});
+    const petals = Array.from({ length: 22 }, () => {
+      const isFlower = Math.random() > 0.45;
+      return {
+        x: Math.random() * width,
+        y: Math.random() * height,
+        type: isFlower ? 'flower' : 'leaf',
+        r: isFlower ? (Math.random() * 4 + 8) : (Math.random() * 6 + 10),
+        d: Math.random() * 30,
+        color: isFlower ? (Math.random() > 0.5 ? '#f8e5e5' : '#ebd0c9') : (Math.random() > 0.5 ? '#d8e5dd' : '#b8d5c4'),
+        tilt: Math.random() * 15 - 15,
+        tiltAngleIncremental: Math.random() * 0.04 + 0.02,
+        tiltAngle: 0
+      };
+    });
 
-function drawPetals() {
-  ctx.clearRect(0, 0, width, height);
-  petals.forEach(p => {
-    ctx.save();
-    ctx.translate(p.x + p.tilt, p.y);
-    ctx.rotate(p.tiltAngle);
-    ctx.fillStyle = p.color;
+    function drawPetals() {
+      ctx.clearRect(0, 0, width, height);
+      petals.forEach(p => {
+        ctx.save();
+        ctx.translate(p.x + p.tilt, p.y);
+        ctx.rotate(p.tiltAngle);
+        ctx.fillStyle = p.color;
 
-    if (p.type === 'flower') {
-      shapePaths.flower.forEach(petal => {
-        ctx.beginPath();
-        if(petal.center) {
-          ctx.fillStyle = '#fceecb'; // light yellow center
-          ctx.arc(petal.cx, petal.cy, p.r * 0.35, 0, Math.PI * 2);
-          ctx.fill();
-          ctx.fillStyle = p.color; // Reset for outer petals
+        if (p.type === 'flower') {
+          shapePaths.flower.forEach(petal => {
+            ctx.beginPath();
+            if(petal.center) {
+              ctx.fillStyle = '#fceecb';
+              ctx.arc(petal.cx, petal.cy, p.r * 0.35, 0, Math.PI * 2);
+              ctx.fill();
+              ctx.fillStyle = p.color;
+            } else {
+              ctx.ellipse(petal.cx * (p.r/10), petal.cy * (p.r/10), p.r * 0.45, p.r * 0.65, Math.PI/2, 0, Math.PI * 2);
+              ctx.fill();
+            }
+          });
         } else {
-          ctx.ellipse(petal.cx * (p.r/10), petal.cy * (p.r/10), p.r * 0.45, p.r * 0.65, Math.PI/2, 0, Math.PI * 2);
+          ctx.beginPath();
+          ctx.moveTo(shapePaths.leaf[0].x * (p.r/10), shapePaths.leaf[0].y * (p.r/10));
+          ctx.bezierCurveTo(shapePaths.leaf[1].x * (p.r/10), shapePaths.leaf[1].y * (p.r/10), p.r * 0.8, 0, shapePaths.leaf[2].x * (p.r/10), shapePaths.leaf[2].y * (p.r/10));
+          ctx.bezierCurveTo(-p.r * 0.8, 0, shapePaths.leaf[3].x * (p.r/10), shapePaths.leaf[3].y * (p.r/10), shapePaths.leaf[0].x * (p.r/10), shapePaths.leaf[0].y * (p.r/10));
           ctx.fill();
         }
+
+        ctx.restore();
       });
-    } else { // leaf shape
-      ctx.beginPath();
-      ctx.moveTo(shapePaths.leaf[0].x * (p.r/10), shapePaths.leaf[0].y * (p.r/10));
-      ctx.bezierCurveTo(shapePaths.leaf[1].x * (p.r/10), shapePaths.leaf[1].y * (p.r/10), p.r * 0.8, 0, shapePaths.leaf[2].x * (p.r/10), shapePaths.leaf[2].y * (p.r/10));
-      ctx.bezierCurveTo(-p.r * 0.8, 0, shapePaths.leaf[3].x * (p.r/10), shapePaths.leaf[3].y * (p.r/10), shapePaths.leaf[0].x * (p.r/10), shapePaths.leaf[0].y * (p.r/10));
-      ctx.fill();
+      updatePetals();
     }
 
-    ctx.restore();
-  });
-  updatePetals();
-}
-
-let angle = 0;
-function updatePetals() {
-  angle += 0.01;
-  petals.forEach(p => {
-    p.tiltAngle += p.tiltAngleIncremental;
-    p.y += (Math.cos(angle + p.d) + 1 + p.r / 3) / 2.5;
-    p.x += Math.sin(angle) * 1.1;
-    if (p.y > height) {
-      p.y = -20;
-      p.x = Math.random() * width;
+    let angle = 0;
+    function updatePetals() {
+      angle += 0.01;
+      petals.forEach(p => {
+        p.tiltAngle += p.tiltAngleIncremental;
+        p.y += (Math.cos(angle + p.d) + 1 + p.r / 3) / 2.5;
+        p.x += Math.sin(angle) * 1.1;
+        if (p.y > height) {
+          p.y = -20;
+          p.x = Math.random() * width;
+        }
+      });
     }
-  });
-}
 
-setInterval(drawPetals, 20);
+    setInterval(drawPetals, 20);
   </script>
 </body>
 </html>
